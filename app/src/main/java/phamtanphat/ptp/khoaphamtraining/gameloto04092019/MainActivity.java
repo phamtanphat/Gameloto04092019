@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -12,9 +13,9 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnRandom;
-    TextView txtResult;
-    EditText edtMin, edtMax;
+    Button mbtnRandom;
+    TextView mtxtResult;
+    EditText medtMin, medtMax;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,22 +33,32 @@ public class MainActivity extends AppCompatActivity {
         // Cac so random khong duoc lap lai
         //Task show toast
         // loi hay thanh cong thong bao cho nguoi dung biet
-        Random random = new Random();
+//        Random random = new Random();
 
 //            5 - 2000
 //            (max - min + 1) + min
         // Random khong link vung nho voi nhau
-        int numberint = random.nextInt(2000 - 5 + 1) + 5;
-        int numberint1 = random.nextInt(2000 - 5 + 1) + 5;
-        Log.d("BBB", numberint + " - " + numberint1);
+//        int numberint = random.nextInt(2000 - 5 + 1) + 5;
+//        int numberint1 = random.nextInt(2000 - 5 + 1) + 5;
+//        Log.d("BBB", numberint + " - " + numberint1);
+
+        // Cach lay gia tri trong edittext
+        mbtnRandom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String sTextMin = medtMin.getText().toString();
+                Log.d("BBB",sTextMin);
+            }
+        });
+
 
 
     }
 
     private void initView() {
-        btnRandom = findViewById(R.id.buttonRandom);
-        txtResult = findViewById(R.id.textviewResult);
-        edtMin = findViewById(R.id.edittextMin);
-        edtMax = findViewById(R.id.edittextMax);
+        mbtnRandom = findViewById(R.id.buttonRandom);
+        mtxtResult = findViewById(R.id.textviewResult);
+        medtMin = findViewById(R.id.edittextMin);
+        medtMax = findViewById(R.id.edittextMax);
     }
 }
