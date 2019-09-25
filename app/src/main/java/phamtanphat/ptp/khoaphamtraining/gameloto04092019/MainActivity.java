@@ -3,9 +3,12 @@ package phamtanphat.ptp.khoaphamtraining.gameloto04092019;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
         // Cac so random khong duoc lap lai
         //Task show toast
         // loi hay thanh cong thong bao cho nguoi dung biet
+        Random random = new Random();
+        int numberint = random.nextInt();
+        Log.d("BBB",numberint + "");
+
     }
 
     private void initView() {
