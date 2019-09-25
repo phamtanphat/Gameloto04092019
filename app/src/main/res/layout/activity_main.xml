@@ -19,9 +19,19 @@
         android:layout_height="wrap_content"
         android:text="Ung dung game loto" />
     <EditText
+        android:id="@+id/edittextMin"
+        android:inputType="number"
         android:maxLines="1"
         android:layout_marginTop="40dp"
         android:hint="Nhap so min"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/edittextMax"
+        android:inputType="number"
+        android:maxLines="1"
+        android:layout_marginTop="40dp"
+        android:hint="Nhap so max"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 </LinearLayout>
