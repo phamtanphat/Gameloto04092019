@@ -14,7 +14,8 @@ public class MainActivity extends AppCompatActivity {
 
     Button btnRandom;
     TextView txtResult;
-    EditText edtMin,edtMax;
+    EditText edtMin, edtMax;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,8 +33,14 @@ public class MainActivity extends AppCompatActivity {
         //Task show toast
         // loi hay thanh cong thong bao cho nguoi dung biet
         Random random = new Random();
-        int numberint = random.nextInt();
-        Log.d("BBB",numberint + "");
+
+//            5 - 2000
+//            (max - min + 1) + min
+        // Random khong link vung nho voi nhau
+        int numberint = random.nextInt(2000 - 5 + 1) + 5;
+        int numberint1 = random.nextInt(2000 - 5 + 1) + 5;
+        Log.d("BBB", numberint + " - " + numberint1);
+
 
     }
 
