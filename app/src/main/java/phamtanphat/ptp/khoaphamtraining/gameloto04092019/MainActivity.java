@@ -29,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
         //Task check valid number:
         // 1 : Phai nhap gia tri cho 2 edittext
         // 2 : Neu so min ma lon max : max = min + 1
-        // 3 : So min khong duoc < 0
+        // 3 : So min la < 100 va max <= 100
+
         //Task handle random:
         // Cac so random khong duoc lap lai
         //Task show toast
@@ -50,12 +51,25 @@ public class MainActivity extends AppCompatActivity {
                 // Lay gia tri trong 2 edittext
                 String sTextMin = medtMin.getText().toString();
                 String sTextMax = medtMax.getText().toString();
-               //Kiem tra gia tri
-                if (sTextMin.isEmpty() && sTextMax.isEmpty()){
-                    Toast.makeText(MainActivity.this,"Nguoi dung chua nhap gia tri",Toast.LENGTH_LONG).show();
+                //Kiem tra gia tri
+                if (sTextMin.isEmpty() && sTextMax.isEmpty()) return;
+                int sMin = Integer.parseInt(sTextMin);
+                int sMax = Integer.parseInt(sTextMax);
+                if (sMin < 100 && sMax <= 100) {
+                    if (sMin >= sMax) {
+                        sMax = sMin + 1;
+                    }
+                } else {
+                    sMax = 100;
+                    sMin = 99;
                 }
+                medtMin.setText(sMin +"");
+                medtMax.setText(sMax +"");
+
 
             }
+
+
         });
 
     }
