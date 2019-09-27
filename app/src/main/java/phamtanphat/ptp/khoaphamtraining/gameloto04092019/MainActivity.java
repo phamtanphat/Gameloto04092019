@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     Button mbtnRandom , mbtnAddnumber;
     TextView mtxtResult;
     EditText medtMin, medtMax;
+    ArrayList<Integer> mMangNumber = new ArrayList<>();
     Random mRandom = new Random();
     String mStringvalueRandom = "";
     @Override
@@ -49,12 +51,6 @@ public class MainActivity extends AppCompatActivity {
         mbtnAddnumber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-            }
-        });
-        mbtnRandom.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
                 // Lay gia tri trong 2 edittext
                 String sTextMin = medtMin.getText().toString();
                 String sTextMax = medtMax.getText().toString();
@@ -73,10 +69,22 @@ public class MainActivity extends AppCompatActivity {
                 medtMin.setText(sMin +"");
                 medtMax.setText(sMax +"");
 
-                int valueRandom = mRandom.nextInt(sMax - sMin + 1) + sMin;
+                if (mMangNumber != null){
+                    if (mMangNumber.size() > 0){
+                        mMangNumber.clear();
+                    }
+                    for (int i = sMin ; i <= sMax ; i++){
+                        mMangNumber.add(i);
+                    }
+                    Toast.makeText(MainActivity.this, mMangNumber.size()+ "", Toast.LENGTH_SHORT).show();
+                }
 
-                mStringvalueRandom += valueRandom + " - ";
-                mtxtResult.setText(mStringvalueRandom);
+            }
+        });
+        mbtnRandom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
 
         });
