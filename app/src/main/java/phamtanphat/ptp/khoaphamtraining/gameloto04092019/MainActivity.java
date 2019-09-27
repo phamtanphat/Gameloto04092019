@@ -84,6 +84,12 @@ public class MainActivity extends AppCompatActivity {
         mbtnRandom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int index = mRandom.nextInt(mMangNumber.size());
+                int value = mMangNumber.get(index);
+                mMangNumber.remove(index);
+                mStringvalueRandom += value + " - ";
+                mtxtResult.setText(mStringvalueRandom);
+
 
             }
 
