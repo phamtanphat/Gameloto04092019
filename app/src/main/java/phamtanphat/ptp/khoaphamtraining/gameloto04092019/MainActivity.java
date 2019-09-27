@@ -84,12 +84,20 @@ public class MainActivity extends AppCompatActivity {
         mbtnRandom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int index = mRandom.nextInt(mMangNumber.size());
-                int value = mMangNumber.get(index);
-                mMangNumber.remove(index);
-                mStringvalueRandom += value + " - ";
-                mtxtResult.setText(mStringvalueRandom);
+                if (mMangNumber.size() > 0){
+                    int index = mRandom.nextInt(mMangNumber.size());
+                    int value = mMangNumber.get(index);
+                    if (mMangNumber.size() == 1){
+                        mStringvalueRandom += value ;
+                    }else{
+                        mStringvalueRandom += value + " - ";
+                    }
 
+                    mtxtResult.setText(mStringvalueRandom);
+                    mMangNumber.remove(index);
+                }else{
+                    Toast.makeText(MainActivity.this, "Het so random", Toast.LENGTH_SHORT).show();
+                }
 
             }
 
