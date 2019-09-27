@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     TextView mtxtResult;
     EditText medtMin, medtMax;
     Random mRandom = new Random();
+    String mStringvalueRandom = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,9 +67,10 @@ public class MainActivity extends AppCompatActivity {
                 medtMin.setText(sMin +"");
                 medtMax.setText(sMax +"");
 
-
                 int valueRandom = mRandom.nextInt(sMax - sMin + 1) + sMin;
-                Toast.makeText(MainActivity.this, valueRandom + "", Toast.LENGTH_SHORT).show();
+
+                mStringvalueRandom += valueRandom + " - ";
+                mtxtResult.setText(mStringvalueRandom);
             }
 
 
