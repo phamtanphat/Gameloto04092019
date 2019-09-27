@@ -39,6 +39,14 @@
        android:layout_width="match_parent"
        android:layout_height="wrap_content">
        <Button
+           android:id="@+id/buttonAddValue"
+           android:text="Add Number"
+           android:layout_centerHorizontal="true"
+           android:layout_height="wrap_content"
+           android:layout_width="wrap_content">
+       </Button>
+       <Button
+           android:layout_below="@id/buttonAddValue"
            android:id="@+id/buttonRandom"
            android:text="Random"
            android:layout_centerHorizontal="true"

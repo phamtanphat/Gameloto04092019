@@ -14,7 +14,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button mbtnRandom;
+    Button mbtnRandom , mbtnAddnumber;
     TextView mtxtResult;
     EditText medtMin, medtMax;
     Random mRandom = new Random();
@@ -46,6 +46,12 @@ public class MainActivity extends AppCompatActivity {
 //        Log.d("BBB", numberint + " - " + numberint1);
 
         // Cach lay gia tri trong edittext
+        mbtnAddnumber.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
         mbtnRandom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,15 +79,16 @@ public class MainActivity extends AppCompatActivity {
                 mtxtResult.setText(mStringvalueRandom);
             }
 
-
         });
 
     }
 
     private void initView() {
         mbtnRandom = findViewById(R.id.buttonRandom);
+        mbtnAddnumber = findViewById(R.id.buttonAddValue);
         mtxtResult = findViewById(R.id.textviewResult);
         medtMin = findViewById(R.id.edittextMin);
         medtMax = findViewById(R.id.edittextMax);
+
     }
 }
